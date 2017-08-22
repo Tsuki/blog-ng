@@ -13,33 +13,32 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        <!--<template v-for="menu in theme.menu">-->
-        <!--<template v-if="menu.enable === undefined || menu.enable !== false">-->
-        <!--<template v-if="menu.layout === 1">-->
-        <!--<a class="main-nav-link" href="menu.path">-->
-        <!--<i class="menu.class" title="menu.name"></i></a>-->
-        <!--</template>-->
-        <!--<template v-else-if="menu.layout === 2">-->
-        <!--<a class="main-nav-link" href="menu.path">-->
-        <!--<i class="menu.class" title="menu.name"></i>-->
-        <!--{{ menu.name }}</a>-->
-        <!--</template>-->
-        <!--<template v-else>-->
-        <!--<a class="main-nav-link" href="menu.path"> {{ menu.name }}</a>-->
-        <!--</template>-->
-        <!--</template>-->
-        <!--</template>-->
+        <ng-container *ngFor="let menu of menus">
+          <ng-container *ngIf="menu.layout === 1">
+            <a class="main-nav-link" href="{{menu.path}}">
+              <i class="{{menu._class}}" title="{{menu.name}}"></i>
+            </a>
+          </ng-container>
+          <ng-container *ngIf="menu.layout === 2">
+            <a class="main-nav-link" href="{{menu.path}}">
+              <i class="menu.class" title="{{menu.name}}"> </i> {{ menu.name }}
+            </a>
+          </ng-container>
+          <ng-container *ngIf="menu.layout === 3">
+            <a class="main-nav-link" href="{{menu.path}}"> {{ menu.name }}</a>
+          </ng-container>
+        </ng-container>
       </nav>
       <nav id="sub-nav">
         <a id="nav-rss-link" class="nav-icon" title="RSS Feed" href="theme.rss" v-if="theme.rss"></a>
-        <a id="nav-search-btn" class="nav-icon" title="Search" click="startSearchAnim" blur="stopSearchAnim"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search" (click)="startSearchAnimation(search)"
+           (blur)="stopSearchAnimation()"></a>
       </nav>
-      <div id="search-form-wrap" class="isActive">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-          <input type="search" name="q" class="search-form-input" placeholder="Search" ref="search"
-                 blur="stopSearchAnim">
-          <button type="submit" class="search-form-submit"></button>
+      <div id="search-form-wrap" class="{{isActive}}">
+        <form action="//google.com/search" accept-charset="UTF-8" class="search-form">
+          <input #search type="search" name="q" class="search-form-input" placeholder="Search"
+                 (blur)="stopSearchAnimation()">
+          <button class="search-form-submit"></button>
           <input type="hidden" name="sitesearch" value="http://Tsuki.github.io"></form>
       </div>
     </div>
