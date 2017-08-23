@@ -15,17 +15,17 @@
       <nav id="main-nav">
         <ng-container *ngFor="let menu of menus">
           <ng-container *ngIf="menu.layout === 1">
-            <a class="main-nav-link" href="{{menu.path}}">
+            <a class="main-nav-link" routerLink="{{menu.path}}" routerLinkActive="active">
               <i class="{{menu._class}}" title="{{menu.name}}"></i>
             </a>
           </ng-container>
           <ng-container *ngIf="menu.layout === 2">
-            <a class="main-nav-link" href="{{menu.path}}">
+            <a class="main-nav-link" routerLink="{{menu.path}}" routerLinkActive="active">
               <i class="menu.class" title="{{menu.name}}"> </i> {{ menu.name }}
             </a>
           </ng-container>
           <ng-container *ngIf="menu.layout === 3">
-            <a class="main-nav-link" href="{{menu.path}}"> {{ menu.name }}</a>
+            <a class="main-nav-link" routerLink="{{menu.path}}" routerLinkActive="active"> {{ menu.name }}</a>
           </ng-container>
         </ng-container>
       </nav>
