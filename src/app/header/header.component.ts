@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GlobalDataService} from '../service/globaldata.service';
 
 @Component({
@@ -15,8 +15,6 @@ export class HeaderComponent implements OnInit {
   title = this.gd.title;
   subtitle = this.gd.subtitle;
   menus = this.gd.menus;
-  @ViewChild('search')
-  search: ElementRef;
 
   ngOnInit() {
   }
