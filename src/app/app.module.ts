@@ -3,11 +3,11 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {DisqusModule} from 'ngx-disqus';
-import {AppRoutingModule} from './app-routing/app-routing.module';
+import {AppRoutingModule} from './module/app-routing.module';
 import {GlobalDataService} from './service/globaldata.service';
 import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
-import {ArticleComponent} from './article/article.component';
+import {ArticleComponent} from './component/article/article.component';
 
 
 @NgModule({
