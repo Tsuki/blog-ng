@@ -7,7 +7,9 @@ import {AppRoutingModule} from './module/app-routing.module';
 import {GlobalDataService} from './service/globaldata.service';
 import {HeaderComponent} from './component/header/header.component';
 import {FooterComponent} from './component/footer/footer.component';
-import {ArticleComponent} from './component/article/article.component';
+import {ArticleComponent} from './component/archive/article/article.component';
+import {ArchiveComponent} from './component/archive/archive.component';
+import { LinkComponent } from './component/archive/widget/link/link.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import {ArticleComponent} from './component/article/article.component';
     HeaderComponent,
     FooterComponent,
     ArticleComponent,
+    ArchiveComponent,
+    LinkComponent,
   ],
   providers: [GlobalDataService],
   bootstrap: [AppComponent]

@@ -1,17 +1,17 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ArticleComponent} from '../component/article/article.component';
+import {ArchiveComponent} from '../component/archive/archive.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: ArticleComponent, data: [{type: 'index'}], pathMatch: 'full'},
-  {path: 'page/:id', component: ArticleComponent, data: [{type: 'index'}]},
-  {path: 'about', component: ArticleComponent, data: [{type: 'page'}]},
-  {path: 'archives', component: ArticleComponent, data: [{type: 'page'}]},
-  {path: 'tags', component: ArticleComponent, data: [{type: 'page'}]},
-  {path: 'picture', component: ArticleComponent, data: [{type: 'page'}]},
-  {path: 'works', component: ArticleComponent, data: [{type: 'page'}]},
-  {path: '**', component: ArticleComponent, data: [{type: 'page'}]}
+  {path: '', component: ArchiveComponent, data: [{type: 'index'}], pathMatch: 'full'},
+  {path: 'page/:id', component: ArchiveComponent, data: [{type: 'index'}]},
+  {path: 'about', component: ArchiveComponent, data: [{type: 'page'}]},
+  {path: 'archives', component: ArchiveComponent, data: [{type: 'page'}]},
+  {path: 'tags', component: ArchiveComponent, data: [{type: 'page'}]},
+  {path: 'picture', component: ArchiveComponent, data: [{type: 'page'}]},
+  {path: 'works', component: ArchiveComponent, data: [{type: 'page'}]},
+  {path: '**', component: ArchiveComponent, data: [{type: 'page'}]}
 ];
 
 @NgModule({
