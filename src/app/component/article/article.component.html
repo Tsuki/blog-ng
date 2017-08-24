@@ -1,3 +1,41 @@
+<article id="post-{{pageId}}" class="article article-type-post" itemscope
+         itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner ">
+    <header class="article-header">
+    </header>
+    <footer class="article-footer">
+      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">Share</a>
+      <a href="#disqus_thread" class="article-comment-link">Comments</a>
+      <div class="tagcloud">
+      </div>
+    </footer>
+    <div class="article-entry <% if(index) { %>article-index<% } %>" itemprop="articleBody">
+      <p class="article-more-link">
+        <a href="#more"></a>
+      </p>
+      <div id="toc" class="toc-article">
+        <h2 class="toc-title"><span>contents</span></h2>
+      </div>
+      <div class="toggle-content">
+      </div>
+      <div class="toggle-input article-more-link"><a>Read More +</a></div>
+    </div>
+
+  </div>
+  <nav id="article-nav" *ngIf="type != 'index';nav">
+    <a href="/page/1" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+      </div>
+    </a>
+    <a href="/page/2" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  </nav>
+</article>
 <section id="comments">
   <div id="disqus_thread">
     <disqus [identifier]="pageId"></disqus>
