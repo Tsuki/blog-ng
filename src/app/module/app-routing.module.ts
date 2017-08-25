@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ArchiveComponent} from '../component/archive/archive.component';
+import {environment} from '../../environments/environment';
 
 
 const appRoutes: Routes = [
@@ -16,7 +17,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    RouterModule.forRoot(appRoutes, {enableTracing: !environment.production}),
   ],
   declarations: [],
   exports: [

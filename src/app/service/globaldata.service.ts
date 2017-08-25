@@ -10,9 +10,9 @@ export class GlobalDataService {
     'zh-TW'
   ];
   timezone = 'HKT';
-  url = 'http=//Tsuki.github.io';
+  url = 'http://Tsuki.github.io';
   root = '/';
-  permalink = '=year/=month/=day/=title/';
+  permalink = ':year/:month/:day/:title/';
   permalink_defaults: string = null;
   source_dir = 'source';
   public_dir = 'public';
@@ -20,9 +20,9 @@ export class GlobalDataService {
   archive_dir = 'archives';
   category_dir = 'categories';
   code_dir = 'downloads/code';
-  i18n_dir = '=lang';
+  i18n_dir = ':lang';
   skip_render: boolean = null;
-  new_post_name = '=year/=month/=day-=title.md';
+  new_post_name = ':year/:month/:day-:title.md';
   default_layout = 'post';
   titlecase = false;
   external_link = true;
@@ -156,7 +156,7 @@ export class GlobalDataService {
 
 interface Friend {
   name: string;
-  url: string
+  url: string;
 }
 
 interface Menu {
