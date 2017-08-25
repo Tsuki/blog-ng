@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import marked from 'marked';
 
 @Component({
@@ -7,15 +8,25 @@ import marked from 'marked';
   styleUrls: ['./article.component.styl']
 })
 export class ArticleComponent implements OnInit {
-  @Input('data')
-  data: string;
+  markdown: string;
   convertedData: string;
+  type: string;
+  pageId: number;
+  date: Date;
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
+    const snapshot = this.route.snapshot;
+    this.type = snapshot.data[0]['type'];
+    if (this.type === 'post') {
+      this.pageId = snapshot.params.get('id').toNumber();
+    }
+    // morking
+    this.date = new Date();
+    this.markdown = `hello
+    - testing`;
   }
 
   ngOnInit() {
-    // const md = marked.setOptions({});
-    // this.convertedData = md.parse(this.data);
+    this.convertedData = marked.parse(this.markdown);
   }
 }

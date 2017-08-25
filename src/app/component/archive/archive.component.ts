@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-archive',
   templateUrl: './archive.component.html',
-  styleUrls: ['./archive.component.styl']
+  styleUrls: ['./archive.component.styl'],
 })
 export class ArchiveComponent implements OnInit {
   type: string;
@@ -17,9 +16,6 @@ export class ArchiveComponent implements OnInit {
     if (this.type === 'post') {
       this.pageId = snapshot.params.get('id').toNumber();
     }
-
-    console.log(`type :${this.type}`);
-    console.log(`pageId :${this.pageId}`);
   }
 
   ngOnInit() {
