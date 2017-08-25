@@ -71,6 +71,15 @@ body
   .mobile-nav-on &
     left: mobile-nav-width
 
+if sidebar and sidebar isnt bottom
+  #main
+    @media mq-normal
+      column(main-column)
+
+if sidebar is left
+  #main
+    float: right
+
 @import "_extend"
 @import "_partial/article"
 @import "_partial/comment"

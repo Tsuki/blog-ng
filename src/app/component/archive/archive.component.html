@@ -1,5 +1,6 @@
-<section id="main" [ngStyle]="(type == 'page'||type == 'tags')  ?'width: 95%':''">
-  <h1>{{type}}</h1>
+<section id="main">
   <app-article></app-article>
 </section>
-<app-link></app-link>
+<aside id="sidebar">
+  <app-link></app-link>
+</aside>
