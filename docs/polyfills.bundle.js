@@ -67,9 +67,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 // import 'intl';  // Run `npm install --save intl`.
 /**
- * Need to import at least one locale-data with intl.
+ * Need to import at least one locale-markdown with intl.
  */
-// import 'intl/locale-data/jsonp/en';
+// import 'intl/locale-markdown/jsonp/en';
 //# sourceMappingURL=polyfills.js.map
 
 /***/ }),
